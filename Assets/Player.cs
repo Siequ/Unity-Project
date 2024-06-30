@@ -8,13 +8,14 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private Player player;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float xInput;
     [SerializeField] private bool isGrounded;
 
-   [SerializeField] private bool isMoving;
+    [SerializeField] private bool isMoving;
     private int doubleJump = 0;
     void Start()
     {
@@ -45,6 +46,12 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
             doubleJump=0;
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+            Time.timeScale = 0;
         }
     }
 

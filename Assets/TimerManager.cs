@@ -22,6 +22,7 @@ public class TimerManager : MonoBehaviour
         if(timer < 0)
         {
             timerText.text = timer.ToString("END");
+            Time.timeScale = 0;
         }
 
         

@@ -37,6 +37,10 @@ public class Enemy : MonoBehaviour
         {
             transform.position = startPosition;
         }
+        if (transform.position.x < -22 && rightSide == 1)
+        {
+            transform.position = startPosition;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -59,7 +63,7 @@ public class Enemy : MonoBehaviour
     {
         onTriggerEnter.Invoke();
         transform.position = startPosition;
-
+        Debug.Log("Punkt!");
 
         playerPoints++;
 
